@@ -24,7 +24,7 @@ public class BaseTest {
         }
         Configuration.browserSize = screenResolution;
         Configuration.remote = selenoidUrl;
-        Configuration.baseUrl = "https://kufar.by";
+        Configuration.baseUrl = "https://intellect-soft.ru";
         Configuration.pageLoadStrategy = "eager";
 
         SelenideLogger.addListener("allure", new AllureSelenide()
