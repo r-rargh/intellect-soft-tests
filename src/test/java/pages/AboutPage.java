@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class AboutPage {
 
     private final SelenideElement title = $("h1");
-    private final SelenideElement companyDescription = $(".about-content");
+    private final SelenideElement companyDescription = $(".mb-4.is-subheader");
 
     @Step("Проверить, что страница «О компании» загрузилась")
     public AboutPage pageShouldBeLoaded() {

@@ -106,7 +106,7 @@ public class IntellectSoftTest extends BaseTest {
                 .openPage()
                 .goToAboutPage()
                 .pageShouldBeLoaded()
-                .companyDescriptionShouldContain("Интеллект Софт");
+                .companyDescriptionShouldContain("более 20 лет");
     }
 
     @Test

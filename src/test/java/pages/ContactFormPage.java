@@ -43,7 +43,7 @@ public class ContactFormPage {
 
     @Step("Согласиться на обработку персональных данных")
     public ContactFormPage agreeToTerms() {
-        confirmCheckbox.click();
+        confirmCheckbox.scrollTo().click();
         return this;
     }
 

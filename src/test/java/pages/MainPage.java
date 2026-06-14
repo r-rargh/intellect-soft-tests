@@ -81,7 +81,7 @@ public class MainPage {
     public MainPage checkFooterLinks() {
         ElementsCollection footerLinks = $$("footer a");
         for (SelenideElement link : footerLinks) {
-            link.click();
+            link.scrollTo().click();
             back();
         }
         return this;
