@@ -82,4 +82,38 @@ public class IntellectSoftTest extends BaseTest {
         new ContactFormPage()
                 .formShouldBeVisible();
     }
+
+    @Test
+    @Description("Отправка формы обратной связи с валидными данными")
+    void submitContactFormTest() {
+        new MainPage()
+                .openPage()
+                .goToContactsPage();
+
+        new ContactFormPage()
+                .fillName("Иван Петров")
+                .fillPhone("+79991234567")
+                .fillMessage("Тестовое сообщение от автотеста")
+                .agreeToTerms()
+                .submitForm()
+                .successMessageShouldBeVisible();
+    }
+
+    @Test
+    @Description("Проверка, что на странице «О компании» есть текст о компании")
+    void aboutPageContainsCompanyInfoTest() {
+        new MainPage()
+                .openPage()
+                .goToAboutPage()
+                .pageShouldBeLoaded()
+                .companyDescriptionShouldContain("Интеллект Софт");
+    }
+
+    @Test
+    @Description("Проверка, что ссылки в футере не битые")
+    void footerLinksAreNotBrokenTest() {
+        new MainPage()
+                .openPage()
+                .checkFooterLinks();
+    }
 }

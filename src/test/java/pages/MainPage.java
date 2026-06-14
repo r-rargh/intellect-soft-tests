@@ -1,5 +1,6 @@
 package pages;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import static com.codeborne.selenide.Condition.visible;
@@ -74,5 +75,15 @@ public class MainPage {
         openProductsMenu();
         korobkaOnlineLink.click();
         return new ProjectPage();
+    }
+
+    @Step("Проверить, что ссылки в футере не битые")
+    public MainPage checkFooterLinks() {
+        ElementsCollection footerLinks = $$("footer a");
+        for (SelenideElement link : footerLinks) {
+            link.click();
+            back();
+        }
+        return this;
     }
 }
