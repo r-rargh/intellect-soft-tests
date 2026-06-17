@@ -12,12 +12,23 @@ public class ContactFormPage {
     private final SelenideElement messageField = $("#message");
     private final SelenideElement confirmCheckbox = $("#confirm");
 
+    private final SelenideElement cookieBanner = $("#cookie-banner");
+    private final SelenideElement cookieAcceptButton = $("#cookie-banner button");
+
     @Step("Проверить, что форма обратной связи отображается")
     public ContactFormPage formShouldBeVisible() {
         nameField.shouldBe(visible);
         phoneField.shouldBe(visible);
         messageField.shouldBe(visible);
         confirmCheckbox.shouldBe(visible);
+        return this;
+    }
+
+    @Step("Закрыть баннер с куками")
+    public ContactFormPage closeCookieBanner() {
+        if (cookieBanner.isDisplayed()) {
+            cookieAcceptButton.click();
+        }
         return this;
     }
 
@@ -41,6 +52,7 @@ public class ContactFormPage {
 
     @Step("Согласиться на обработку персональных данных")
     public ContactFormPage agreeToTerms() {
+        closeCookieBanner();
         confirmCheckbox.scrollTo().click();
         return this;
     }
