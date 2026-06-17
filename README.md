@@ -24,7 +24,10 @@
 <img width="6%" title="GitHub" src="media/logo/gitHub.svg">
 <img width="6%" title="Jenkins" src="media/logo/jenkins.svg">
 <img width="6%" title="Telegram" src="media/logo/telegram.svg">
+  
 </p>
+
+⚙️ **Owner** — управление конфигурацией (браузер, версия, удалённый запуск)
 
 Тесты в данном проекте написаны на языке **Java** с использованием фреймворка для тестирования [Selenide](https://selenide.org/), сборщик — **Gradle**. **JUnit 5** задействован в качестве фреймворка модульного тестирования.
 
@@ -55,8 +58,8 @@
 |----------|----------|--------|
 | `-Dbrowser` | Браузер | `chrome`, `firefox` |
 | `-DbrowserVersion` | Версия браузера | `128.0` |
-| `-DscreenResolution` | Разрешение экрана | `1920x1080` |
-| `-DselenoidUrl` | Адрес Selenoid | `https://user1:1234@...` |
+| `-DisRemote` | Удалённый запуск | `true` |
+| `-DremoteUrl` | Адрес Selenoid | `https://user1:1234@...` |
 
 ## <img width="4%" style="vertical-align:middle" title="Jenkins" src="media/logo/jenkins.svg"> Сборка в Jenkins
 
@@ -113,6 +116,6 @@
 
 ## 👨‍💻 Автор
 
-[Рафаэль Мирзаев](https://github.com/r-rargh)
+[Рафаэль Мирзаев](https://github.com/rarhg)
 
 ---
